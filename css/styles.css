@@ -762,3 +762,49 @@ body {
   letter-spacing: 0.03em;
   color: var(--primeri-text-color);
 }
+
+/*--------------- Модалка------------- */
+.backdrop{
+  width:100vw;
+  height: 100vh;
+  background-color:rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 300ms, visibility 300ms;
+}
+.backdrop.is-hidden .modal{
+  transform: scale(1.5) rotate(270deg) ;
+
+}
+.modal{
+  min-width: 528px;
+  min-height: 581px;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) rotate(0) translate(-50%, -50%);
+  transition: transform 300ms;
+}
+.modal-close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  min-height: 30px;
+  min-width: 30px;
+  background-color:#FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
+
+}
+.is-hidden{
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
