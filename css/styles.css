@@ -735,6 +735,7 @@ body {
   transition-property: transform;
   transition-duration: var(--duration);
   transition-timing-function: var(--function);
+  overflow: auto;
 }
 .portfolio-project {
   border: 1px solid #eeeeee;
