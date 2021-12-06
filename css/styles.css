@@ -134,14 +134,30 @@ body {
   transition-property: color;
   transition-duration: var(--duration);
   transition-timing-function: var(--function);
+  position: relative;
 }
 .site-nav:hover,
 .site-nav:focus {
   color: var(--accent-colot);
 }
-.site-nav .current {
+.site-nav.current {
   color: var(--accent-colot);
 }
+
+.current::after{
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color:var(--logo-color) ;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+.site-nav.current{
+  color: var(--accent-colot);
+}
+
 /* Contacts */
 
 .header-list .contact-link + .contact-link {
@@ -413,6 +429,9 @@ body {
   width: 20px;
   height: 20px;
   fill: currentColor;
+  transition-property: fill, background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--function);
 }
 .link-social-networks:hover,
 .link-social-networks:focus  {
@@ -632,6 +651,10 @@ body {
   padding: 6px 22px;
   color: var(--title-text-color);
   background-color: var(--gray-background-color);
+  transition-property: color, background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--function);
+
 }
 .button-works:focus,
 .button-works:hover {
@@ -668,9 +691,12 @@ body {
 }
 .portfolio-pojects-item {
   background-color: var(--white-color);
+
 }
 
-
+.portfolio-pojects-item:hover .overlay-text{
+  transform: translateY(0);
+}
 
 .portfolio-pojects-link {
   text-decoration: none;
@@ -683,19 +709,33 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* .card-aside {
+.card-aside {
   position: relative;
   height: 294px;
   overflow: hidden;
 }
-.overlay{
+.overlay-text{
   position: absolute;
   bottom: 0;
   align-items: center;
   width: 100%;
-  height: 294px;
- 
-} */
+  height: 100%;
+
+  margin: 0;
+  padding: 63px 24px;
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  text-align: left;
+  background-color: var(--accent-colot);
+
+
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--function);
+}
 .portfolio-project {
   border: 1px solid #eeeeee;
   border-top: 0;
